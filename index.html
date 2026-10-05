@@ -287,24 +287,30 @@
 <script>
 // Highlight the nav item for whichever section is currently on screen.
 (function () {
-  var sections = document.querySelectorAll('main section');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section'));
   var navItems = document.querySelectorAll('.nav-item');
 
-  function setActive(id) {
+  function update() {
+    var current = sections[0];
+
+    // the last section whose top has passed the trigger line
+    sections.forEach(function (s) {
+      if (s.getBoundingClientRect().top <= 140) current = s;
+    });
+
+    // if we are at the very bottom, always light up the last section
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+      current = sections[sections.length - 1];
+    }
+
     navItems.forEach(function (a) {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current.id);
     });
   }
 
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-
-    sections.forEach(function (s) { observer.observe(s); });
-  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 
