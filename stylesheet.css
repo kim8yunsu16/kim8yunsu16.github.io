@@ -157,13 +157,20 @@ p { margin: 0 0 14px; }
   margin-bottom: 24px;
 }
 
+.pub a:has(> .pub-thumb) {
+  flex: 0 0 150px;
+  display: block;
+  line-height: 0;
+}
+
 .pub-thumb {
   width: 150px;
-  flex: 0 0 150px;
   border-radius: 4px;
   border: 1px solid var(--line);
   display: block;
+  transition: opacity .15s;
 }
+.pub-thumb:hover { opacity: .8; }
 
 .pub-body { flex: 1 1 auto; min-width: 0; }
 
@@ -279,9 +286,10 @@ footer {
 
   .pub { flex-direction: column; gap: 10px; }
 
+  .pub a:has(> .pub-thumb) { flex: none; }
+
   .pub-thumb {
     width: 100%;
-    flex: none;
     max-width: 320px;
   }
 }
