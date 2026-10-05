@@ -8,7 +8,7 @@
   --muted: #666;
   --line: #e2e2e2;
   --link: #1a4fa0;
-  --accent: #0d7c6b;
+  --accent: #1a4fa0;
   --bg: #ffffff;
   --maxw: 1080px;
   --side: 250px;
@@ -124,22 +124,21 @@ section {
 }
 
 h2 {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--accent);
   letter-spacing: -.01em;
   margin: 0 0 24px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--text);
+  border-bottom: 1px solid var(--line);
 }
 
 h3 {
   font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--accent);
   letter-spacing: .02em;
   margin: 34px 0 16px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--line);
 }
 h3:first-of-type { margin-top: 24px; }
 
@@ -216,8 +215,8 @@ p { margin: 0 0 14px; }
 }
 
 .item-title {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15.5px;
 }
 
 .item-date {
