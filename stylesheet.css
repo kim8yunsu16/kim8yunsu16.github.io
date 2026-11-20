@@ -314,3 +314,12 @@ footer {
   }
   .pub-authors, .item-sub { color: #bbb; }
 }
+
+.pub { display: flex; gap: 16px; margin-bottom: 30px; align-items: flex-start; }
+.pub-thumb { width: 150px; border-radius: 4px; }
+
+.pub-title { font-weight: 600; font-size: 1.02rem; line-height: 1.35; margin-bottom: 5px; }
+.pub-authors { font-size: 0.92rem; color: #555; margin-bottom: 2px; }
+.pub-venue { font-size: 0.9rem; color: #808080; font-style: italic; margin-bottom: 5px; }
+.pub-links a { font-size: 0.88rem; color: #1a5fb4; text-decoration: none; }
+.me { font-weight: 600; color: #111; }
